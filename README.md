@@ -17,3 +17,7 @@ This mod adds Technic-related tools and nodes to Minetest. As of the last change
 
 ### Nodes
 - Heated Stone - A node that looks like lava and emits light, but is essentially a stone node.
+
+### Wiki
+For more information on the content added by this node, please see its GitHub wiki:
+- https://github.com/ExcaliburZero/moretechnictools/wiki
