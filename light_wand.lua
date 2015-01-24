@@ -15,8 +15,13 @@ minetest.register_node("moretechnictools:heated_stone", {
 --Light Tool
 --
 
+--Tool charge constants
+local light_wand_max_charge = 30000
+local light_wand_power_per_use = light_wand_max_charge / 20
+local light_wand_power_restore = light_wand_power_per_use * 0.5
+
 --Register as a technic tool
-technic.register_power_tool("moretechnictools:light_wand", 50000)
+technic.register_power_tool("moretechnictools:light_wand", light_wand_max_charge)
 
 --Register as a tool item
 minetest.register_tool("moretechnictools:light_wand", {
@@ -31,9 +36,7 @@ minetest.register_tool("moretechnictools:light_wand", {
 			return
 		end
 
-		--Power usage of tool
-		local charge_to_take = 1000
-
+		local charge_to_take = light_wand_power_per_use
 		local pos = pointed_thing.under
 
 		--If has enough charge to be used and is pointed at a node
@@ -45,16 +48,27 @@ minetest.register_tool("moretechnictools:light_wand", {
 				minetest.env:add_node(pos, {name="moretechnictools:heated_stone"})
 				meta.charge = meta.charge - charge_to_take
 				itemstack:set_metadata(minetest.serialize(meta))
-				technic.set_RE_wear(itemstack, meta.charge, 50000)
+				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
 
 			--If the pointed at node is heated stone then turn it into stone and increase the tool's energy slightly
 			elseif n == "moretechnictools:heated_stone" then
 				minetest.env:add_node(pos, {name="default:stone"})
-				meta.charge = meta.charge + (charge_to_take * 0.5)
+				meta.charge = meta.charge + light_wand_power_restore
 				itemstack:set_metadata(minetest.serialize(meta))
-				technic.set_RE_wear(itemstack, meta.charge, 50000)
+				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
 			end
 
+		--If does not have enough charge to be used on stone and is pointed at a node
+		elseif not (pos == nil) then
+			local n = minetest.env:get_node(pos).name
+
+			--If the pointed at node is heated stone then turn it into stone and increase the tool's energy slightly
+			if n == "moretechnictools:heated_stone" then
+				minetest.env:add_node(pos, {name="default:stone"})
+				meta.charge = meta.charge + light_wand_power_restore
+				itemstack:set_metadata(minetest.serialize(meta))
+				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
+			end
 		end
 
 		return itemstack
