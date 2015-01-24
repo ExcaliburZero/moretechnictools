@@ -60,3 +60,13 @@ minetest.register_tool("moretechnictools:light_wand", {
 		return itemstack
 	end,
 })
+
+--Register crafting recipe
+minetest.register_craft({
+	output = "moretechnictools:light_wand",
+	recipe = {
+		{"", "default:mese_crystal", ""},
+		{"technic:battery", "bucket:bucket_lava", "technic:battery"},
+		{"", "technic:battery", ""}
+	}
+})

@@ -7,6 +7,7 @@ This mod is released under the CC0 1.0 Universal license. Some parts of this mod
 ## Dependancies
 - default
 - technic
+- bucket
 
 ## Added content
 This mod adds Technic-related tools and nodes to Minetest. As of the last change to this README file the added tools and nodes are:
