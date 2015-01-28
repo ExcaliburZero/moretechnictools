@@ -14,6 +14,7 @@ This mod adds Technic-related tools and nodes to Minetest. As of the last change
 
 ### Tools
 - Light Wand - Turns stone nodes into heated stone nodes in order to provide light sources when digging in caves and mines. Can also turn heated stone nodes back into regular stone nodes in order to regain energy.
+- Cooling Device - Turns water flowing and water source nodes into ice nodes, and turns lava flowing and lava source nodes into obsidian nodes.
 
 ### Nodes
 - Heated Stone - A node that looks like lava and emits light, but is essentially a stone node.
