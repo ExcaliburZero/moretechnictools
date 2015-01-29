@@ -4,6 +4,10 @@ This is a Minetest mod that adds more Technic tools.
 ## License
 This mod is released under the CC0 1.0 Universal license. Some parts of this mod use code written by RealBad Angel and are released under the WTFPL license.
 
+The Heated Stone texture is from the Lava Cooling mod and is licensed under the CC BY-SA 3.0 by Rath / rathgit.
+
+- CC BY-SA 3.0: http://creativecommons.org/licenses/by-sa/3.0/
+
 ## Dependancies
 - default
 - technic

@@ -4,7 +4,7 @@ local S = technic.getter
 --Heated Stone
 --
 minetest.register_node("moretechnictools:heated_stone", {
-	tile_images = {"default_lava.png^moretechnictools_heated_stone.png"},
+	tile_images = {"moretechnictools_heated_stone.png"},
 	description = "Heated Stone",
 	groups = {cracky=3, stone=1},
 	light_source = 11,
