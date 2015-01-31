@@ -26,3 +26,7 @@ This mod adds Technic-related tools and nodes to Minetest. As of the last change
 ### Wiki
 For more information on the content added by this mod, please see its GitHub wiki:
 - https://github.com/ExcaliburZero/moretechnictools/wiki
+
+## Forum Topic
+The forum topic for this mod on the Minetest Forums is located at:
+- https://forum.minetest.net/viewtopic.php?f=9&t=11094
