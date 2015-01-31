@@ -26,8 +26,14 @@ minetest.register_tool("moretechnictools:cooling_device", {
 			return
 		end
 
-		local charge_to_take = cooling_device_power_per_use
 		local pos = pointed_thing.under
+
+		-- disallow using the tool in protected areas
+		if minetest.is_protected(pos, user:get_player_name()) then
+			return
+		end
+
+		local charge_to_take = cooling_device_power_per_use
 
 		--If has enough charge to be used and is pointed at a node
 		if meta.charge >= charge_to_take and (not (pos == nil)) then
