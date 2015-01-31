@@ -8,7 +8,7 @@ The Heated Stone texture is from the Lava Cooling mod and is licensed under the 
 
 - CC BY-SA 3.0: http://creativecommons.org/licenses/by-sa/3.0/
 
-## Dependancies
+## Dependencies
 - default
 - technic
 - bucket
@@ -19,6 +19,7 @@ This mod adds Technic-related tools and nodes to Minetest. As of the last change
 ### Tools
 - Light Wand - Turns stone nodes into heated stone nodes in order to provide light sources when digging in caves and mines. Can also turn heated stone nodes back into regular stone nodes in order to regain energy.
 - Cooling Device - Turns water flowing and water source nodes into ice nodes, and turns lava flowing and lava source nodes into obsidian nodes.
+- Tool Repairer (mk1-3) - Repairs the tool one slot to the left of it when used.
 
 ### Nodes
 - Heated Stone - A node that looks like lava and emits light, but is essentially a stone node.
