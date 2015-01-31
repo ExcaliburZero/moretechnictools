@@ -41,18 +41,18 @@ minetest.register_tool("moretechnictools:light_wand", {
 
 		--If has enough charge to be used and is pointed at a node
 		if meta.charge >= charge_to_take and (not (pos == nil)) then
-			local n = minetest.env:get_node(pos).name
+			local n = minetest.get_node(pos).name
 
 			--If the pointed at node is stone then turn it into heated stone and decrease the tool's energy
 			if n == "default:stone" then
-				minetest.env:add_node(pos, {name="moretechnictools:heated_stone"})
+				minetest.add_node(pos, {name="moretechnictools:heated_stone"})
 				meta.charge = meta.charge - charge_to_take
 				itemstack:set_metadata(minetest.serialize(meta))
 				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
 
 			--If the pointed at node is heated stone then turn it into stone and increase the tool's energy slightly
 			elseif n == "moretechnictools:heated_stone" then
-				minetest.env:add_node(pos, {name="default:stone"})
+				minetest.add_node(pos, {name="default:stone"})
 				meta.charge = meta.charge + light_wand_power_restore
 				itemstack:set_metadata(minetest.serialize(meta))
 				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
@@ -60,11 +60,11 @@ minetest.register_tool("moretechnictools:light_wand", {
 
 		--If does not have enough charge to be used on stone and is pointed at a node
 		elseif not (pos == nil) then
-			local n = minetest.env:get_node(pos).name
+			local n = minetest.get_node(pos).name
 
 			--If the pointed at node is heated stone then turn it into stone and increase the tool's energy slightly
 			if n == "moretechnictools:heated_stone" then
-				minetest.env:add_node(pos, {name="default:stone"})
+				minetest.add_node(pos, {name="default:stone"})
 				meta.charge = meta.charge + light_wand_power_restore
 				itemstack:set_metadata(minetest.serialize(meta))
 				technic.set_RE_wear(itemstack, meta.charge, light_wand_max_charge)
