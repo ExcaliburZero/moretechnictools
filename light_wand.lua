@@ -40,7 +40,7 @@ minetest.register_tool("moretechnictools:light_wand", {
 	inventory_image = "moretechnictools_light_wand.png",
 	stack_max = 1,
 	wear_represents = "technic_RE_charge",
-	on_refil = technicrefill_RE_charge,
+	on_refil = technic.refill_RE_charge,
 	on_use = function(itemstack, user, pointed_thing)
 		local meta = minetest.deserialize(itemstack:get_metadata())
 		if not meta or not meta.charge then
