@@ -19,7 +19,7 @@ minetest.register_tool("moretechnictools:cooling_device", {
 	stack_max = 1,
 	liquids_pointable = true,
 	wear_represents = "technic_RE_charge",
-	on_refil = technicrefill_RE_charge,
+	on_refil = technic.refill_RE_charge,
 	on_use = function(itemstack, user, pointed_thing)
 		local meta = minetest.deserialize(itemstack:get_metadata())
 		if not meta or not meta.charge then
