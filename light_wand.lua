@@ -4,8 +4,19 @@ local S = technic.getter
 --Heated Stone
 --
 minetest.register_node("moretechnictools:heated_stone", {
-	tile_images = {"moretechnictools_heated_stone.png"},
 	description = "Heated Stone",
+	tiles = {
+		{
+			name = "moretechnictools_heated_stone_animated.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 3,
+			},
+		},
+	},
+	--inventory_image = "moretechnictools_heated_stone.png",
 	groups = {cracky=3, stone=1},
 	light_source = 11,
 	drop = "default:cobble",
