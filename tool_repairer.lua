@@ -1,5 +1,11 @@
-local S = technic.getter
-
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
+else
+  S = function ( s ) return s end
+end
 --
 --Tool Repairer
 --
@@ -48,7 +54,7 @@ for _, m in pairs(tool_repairer_list) do
 					--Decrease the charge of the Tool Repairer
 					meta.charge = meta.charge - m[3]
 					itemstack:set_metadata(minetest.serialize(meta))
-					technic.set_RE_wear(itemstack, meta.charge, m[2])				
+					technic.set_RE_wear(itemstack, meta.charge, m[2])
 				end
 
 			end

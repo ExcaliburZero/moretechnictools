@@ -1,10 +1,19 @@
-local S = technic.getter
+--local S = technic.getter
+
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
+else
+  S = function ( s ) return s end
+end
 
 --
 --Heated Stone
 --
 minetest.register_node("moretechnictools:heated_stone", {
-	description = "Heated Stone",
+	description = S("Heated Stone"),
 	tiles = {
 		{
 			name = "moretechnictools_heated_stone_animated.png",

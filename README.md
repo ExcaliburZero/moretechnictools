@@ -12,6 +12,7 @@ The Heated Stone texture is from the Lava Cooling mod and is licensed under the 
 - default
 - technic
 - bucket
+- intllib?
 
 ## Added content
 This mod adds Technic-related tools and nodes to Minetest. As of the last change to this README file the added tools and nodes are:

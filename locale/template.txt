@@ -1,0 +1,4 @@
+Cooling Device =
+Heated Stone =
+Light Wand =
+Tool Repairer Mk%d =
