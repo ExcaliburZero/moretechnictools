@@ -1,0 +1,4 @@
+Cooling Device = Kuehler Apparat
+Heated Stone = Heiss Stein
+Light Wand = Lichtstab
+Tool Repairer Mk%d = Werkzeugreparier Modell %d
